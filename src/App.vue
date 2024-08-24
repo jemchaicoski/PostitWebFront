@@ -1,27 +1,30 @@
 <template>
-  <AppSidebar />
-  <div class="content">
-    <router-view />
+  <div class="layout">
+    <AppSidebar />
+    <div class="content">
+      <router-view />
+    </div>
   </div>
-
 </template>
+
 
 <script setup>
 import AppSidebar from './components/AppSidebar.vue';
 </script>
 
-<style>
-  .content {
-    display: flex;
-    align-content: center;
+<style Lang="sass" scoped>
+.layout {
+  display: contents;
+  min-height: 100vh;
+  min-width: 100vh;
+}
 
-    @media (min-width: 1024px) {
-      * {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 2%;
-      }
-    } 
-  }
+.content {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
 </style>

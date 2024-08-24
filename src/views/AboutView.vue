@@ -1,5 +1,6 @@
 <template>
-  <div class="about-page">
-    <h1>This is an about page</h1>
-  </div>
+    <main class="about-page">
+        <h1>About Page</h1>
+        <p>Tela sobre App</p>
+    </main>
 </template>

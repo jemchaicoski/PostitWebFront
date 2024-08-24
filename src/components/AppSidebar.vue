@@ -99,7 +99,7 @@ aside {
       }
 
       &.router-link-exact-active {
-        background-color: var(--dark-alt);
+        background-color: var(--vt-c-black);
         border-right: 5px solid var(--primary);
 
         .material-icons,
