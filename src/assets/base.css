@@ -93,20 +93,6 @@ body {
   font-optical-sizing: auto;
 }
 
-#app {
-  display: flex;
-  margin: 0!important;
-
-  main {
-    flex: 1 1 0;
-    padding: 2rem;
-
-    @media screen {
-      padding-left: 6rem;
-    }
-  }
-}
-
 button {
   cursor: pointer;
   appearance: none;
