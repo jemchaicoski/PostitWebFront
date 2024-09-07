@@ -1,11 +1,13 @@
 <template>
-  <div class="app">
-    <Sidebar />
-    <router-view />
+  <div class="layout">
+    <AppSidebar />
+    <div class="content">
+      <router-view />
+    </div>
   </div>
-
 </template>
 
+
 <script setup>
-import Sidebar from './components/Sidebar.vue'
+import AppSidebar from './components/AppSidebar.vue';
 </script>

@@ -4,5 +4,3 @@
         <p>Tela do User</p>
     </main>
 </template>
-
-<style></style>

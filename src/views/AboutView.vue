@@ -1,15 +1,6 @@
 <template>
-  <div class="about-page">
-    <h1>This is an about page</h1>
-  </div>
+    <main class="about-page">
+        <h1>About Page</h1>
+        <p>Tela sobre App</p>
+    </main>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about-page {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>

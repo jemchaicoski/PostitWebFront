@@ -4,5 +4,3 @@
         <p>Tela do Board</p>
     </main>
 </template>
-
-<style></style>
