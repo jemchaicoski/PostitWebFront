@@ -1,43 +1,40 @@
 <template>
-    <aside :class="`${isExpanded && 'is-expanded'}`">
+    <aside :class="`${isExpanded ? 'is-expanded' : 'is-collapsed'}`">
         <div class="logo">
-            <img src="../assets/logo.svg" alt="logo">
+            <img src="../assets/logo.svg" alt="logo" />
         </div>
 
         <div class="menu-toggle-wrap">
             <button class="menu-toggle" @click="ToggleMenu">
-                <span class="material-symbols-outlined">
-                    double_arrow
-                </span>
+                <span class="material-symbols-outlined"> double_arrow </span>
             </button>
         </div>
 
-        <h3>Menu</h3>
         <div class="menu">
             <router-link class="button" to="/">
                 <span class="material-symbols-outlined">sticky_note</span>
-                <span class="text">Board</span>
+                <h1 class="text">Board</h1>
             </router-link>
 
             <router-link class="button" to="/about">
                 <span class="material-symbols-outlined">question_mark</span>
-                <span class="text">About</span>
+                <h1 class="text">About</h1>
             </router-link>
         </div>
     </aside>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const isExpanded = ref(false);
+const isExpanded = ref(false)
 
 const ToggleMenu = () => {
-    isExpanded.value = !isExpanded.value;
+    isExpanded.value = !isExpanded.value
 }
 </script>
 
-<style Lang="sass" scoped>
+<style lang="scss" scoped>
 aside {
     display: flex;
     flex-direction: column;
@@ -68,6 +65,7 @@ aside {
         display: flex;
         justify-content: flex-end;
         margin-bottom: 1rem;
+        margin-left: 2.5rem;
 
         position: relative;
         top: 0;
@@ -95,26 +93,63 @@ aside {
         width: var(--sidebar-width);
 
         .menu-toggle-wrap {
-            top: -3rem;
+            top: -4rem;
+            left: 0.5rem;
 
             .menu-toggle {
                 transform: rotate(-180deg);
             }
         }
 
-        h3,
-        .button .text {
-            opacity: 1;
-        }
+        .menu {
+            .button {
+                display: flex;
+                align-items: center;
+                min-width: 100%;
 
-        .button {
-            .material-icons {
-                margin-right: 1rem;
+                .material-icons {
+                    margin-right: 1rem;
+                }
+
+                .text {
+                    opacity: 1;
+                    visibility: visible;
+                    position: inline;
+                    padding-left: 1rem;
+                }
             }
         }
 
         .footer {
             opacity: 0;
+        }
+    }
+
+    &.is-collapsed {
+        .menu {
+            .text {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                transition: opacity 0.5s ease, visibility 0.5s ease;
+            }
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .material-symbols-outlined {
+            font-size: 30px;
+        }
+
+        .button {
+            .text {
+                opacity: 0;
+                transition: opacity 0.2s ease 0.2s, display 0.2s ease 0.2s;
+            }
         }
     }
 

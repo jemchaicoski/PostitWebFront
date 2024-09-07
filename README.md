@@ -1,6 +1,6 @@
 # PostitWebFront
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend of a web app for an online wall of post-its.
 
 ## Recommended IDE Setup
 
@@ -39,3 +39,7 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## Links and References
+
+Logo Icon: [Flaticon](https://www.flaticon.com/free-icons/paper)
