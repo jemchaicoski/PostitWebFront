@@ -5,7 +5,7 @@
         </div>
 
         <div class="menu-toggle-wrap">
-            <button class="menu-toggle" @click="ToggleMenu">
+            <button class="menu-toggle" @click="ToggleAppSideBar">
                 <span class="material-symbols-outlined"> double_arrow </span>
             </button>
         </div>
@@ -25,13 +25,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const isExpanded = ref(false)
 
-const ToggleMenu = () => {
+const ToggleAppSideBar = () => {
     isExpanded.value = !isExpanded.value
+    localStorage.setItem('sidebarState', JSON.stringify(isExpanded.value));
 }
+
+onMounted(() => {
+    const savedState = localStorage.getItem('sidebarState');
+    if (savedState !== null) {
+        isExpanded.value = JSON.parse(savedState);
+    }
+});
 </script>
 
 <style lang="scss" scoped>
