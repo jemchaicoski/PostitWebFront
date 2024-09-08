@@ -1,9 +1,7 @@
 <template>
   <div class="layout">
     <AppSidebar />
-    <div class="content">
-      <router-view />
-    </div>
+    <router-view class="content" />
   </div>
 </template>
 
